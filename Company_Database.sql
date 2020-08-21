@@ -119,3 +119,73 @@ INSERT INTO works_with VALUES(105, 404, 33000);
 INSERT INTO works_with VALUES(107, 405, 26000);
 INSERT INTO works_with VALUES(102, 406, 15000);
 INSERT INTO works_with VALUES(105, 406, 130000);
+
+-- Find all emploees
+SELECT *
+FROM emploee;
+
+-- Find all clients
+SELECT *
+FROM client;
+
+-- Find all emploees ordered by salary
+SELECT *
+FROM emploee
+ORDER BY salary ASC; -- OR DESC 
+
+-- Find all emploees ordered by sex then name
+SELECT *
+FROM emploee
+ORDER BY sex, name;
+
+-- Find the first 5 emploees in the table 
+SELECT *
+FROM emploee
+LIMIT 5;
+
+-- Find the first and last names of all emploees
+SELECT first_name, emploee.last_name
+FROM emploee;
+
+-- Find the forename and surname names of all emploees
+SELECT first_name AS forename, emploee.last_name AS surname
+FROM emploee;
+
+-- Find all different branch_ids
+SELECT DISTINCT branch_id
+FROM emploee;
+
+-- Find all male emploees
+SELECT *
+FROM emploee
+WHERE sex = 'M';
+
+-- Find all emplooes at branch 2
+SELECT *
+FROM emploee 
+WHERE branch_id = 2;
+
+-- Find all emploee's id's and names who were born after 1969
+SELECT emp_id, first_name, last_name
+FROM emploee
+WHERE birth_day >= 1970-01-01;
+
+-- Find all female emploee at branch 2
+SELECT *
+FROM emploee
+WHERE sex = 'F' AND branch_id = 2;
+
+-- Find all employees who are female & born after 1969 or who make over 80000
+SELECT *
+FROM emploee
+WHERE (sex = 'F' AND birth_day >= 1970-01-01) OR salary > 80000;
+
+-- Find all employees born between 1970 and 1975
+SELECT *
+FROM emploee
+WHERE birth_day BETWEEN 1970-01-01 AND 1975-01-01;
+
+-- Find all employees named Jim, Michael, Johnny or David
+SELECT *
+FROM emploee
+WHERE name IN ('Jim', 'Michael', 'Johnny', 'David');
