@@ -220,3 +220,23 @@ GROUP BY client_id;
 SELECT SUM(total_sales), client_id
 FROM works_with
 GROUP BY client_id;
+
+-- Find any client's who are an LLC
+SELECT *
+FROM client
+WHERE client_name LIKE '%LLC';
+
+-- Find any branch suppliers who are in the label business
+SELECT *
+FROM branch_supplier
+WHERE branch_name LIKE '% label%';
+
+-- Find any employee born on the 10th day of the month
+SELECT *
+FROM emploee
+WHERE birth_day LIKE '____-10%';
+
+-- Find any clients who are schools
+SELECT *
+FROM client
+WHERE client_name LIKE '%Highschool%'
