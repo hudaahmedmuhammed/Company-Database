@@ -189,3 +189,20 @@ WHERE birth_day BETWEEN 1970-01-01 AND 1975-01-01;
 SELECT *
 FROM emploee
 WHERE name IN ('Jim', 'Michael', 'Johnny', 'David');
+
+-- Find the number of emploees 
+SELECT COUNT(emp_id)
+FROM emploee;
+
+-- Find the number of supervisors
+SELECT COUNT(super_id)
+FROM emploee;
+
+-- Find the average of all employee's salaries
+SELECT AVG(salary)
+FROM emploee;
+
+-- Find the sum of all employee's salaries
+SELECT SUM(salary)
+FROM emploee;
+
